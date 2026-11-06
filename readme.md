@@ -20,10 +20,6 @@ Abra `index.html` em um navegador ou use a extensão Live Server no VS Code. O p
 
 Os projetos são apresentados conforme o material público consultado. Não há demonstração online do Vendly indicada neste portfólio.
 
-## Publicação
-
-O site pode ser publicado como conteúdo estático, por exemplo, com GitHub Pages. Configure a publicação para servir `index.html` a partir da raiz do repositório e confira a URL gerada antes de divulgá-la. O endereço público não está configurado neste projeto.
-
 ## Contato
 
 - E-mail: [alessandrojgrella@gmail.com](mailto:alessandrojgrella@gmail.com)
