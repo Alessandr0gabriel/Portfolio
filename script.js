@@ -3,8 +3,27 @@ const menuButton = document.querySelector(".menu-toggle");
 const navigation = document.querySelector(".site-nav");
 const backToTop = document.querySelector(".back-to-top");
 const year = document.getElementById("current-year");
+const emailLink = document.querySelector(".email-link");
+const copyEmailButton = document.querySelector(".copy-email");
+const copyEmailStatus = document.querySelector(".copy-email-status");
 
 year.textContent = new Date().getFullYear();
+
+copyEmailButton.hidden = false;
+copyEmailButton.addEventListener("click", async () => {
+  if (!navigator.clipboard || !window.isSecureContext) {
+    copyEmailStatus.textContent = "Não foi possível copiar. Selecione e copie o endereço acima.";
+    return;
+  }
+
+  try {
+    await navigator.clipboard.writeText(emailLink.getAttribute("href").slice("mailto:".length));
+    copyEmailStatus.textContent = "E-mail copiado!";
+  } catch (error) {
+    console.error("Não foi possível copiar o e-mail:", error);
+    copyEmailStatus.textContent = "Não foi possível copiar. Selecione e copie o endereço acima.";
+  }
+});
 
 function closeMenu() {
   menuButton.setAttribute("aria-expanded", "false");

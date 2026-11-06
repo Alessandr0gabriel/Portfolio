@@ -924,6 +924,7 @@ img {
 }
 
 .contact-copy {
+  min-width: 0;
   padding-bottom: 6px;
 }
 
@@ -931,11 +932,20 @@ img {
   font-size: 12px;
 }
 
+.email-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 14px;
+  margin-top: 9px;
+}
+
 .email-link {
   display: inline-flex;
+  max-width: 100%;
   align-items: center;
   gap: 13px;
-  margin-top: 9px;
+  overflow-wrap: anywhere;
   font-family: var(--display);
   font-size: clamp(1.1rem, 2.4vw, 1.6rem);
   font-weight: 600;
@@ -944,6 +954,34 @@ img {
 
 .email-link:hover {
   color: var(--cyan);
+}
+
+.copy-email {
+  min-height: 44px;
+  padding: 8px 12px;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  background: transparent;
+  color: var(--paper);
+  cursor: pointer;
+  font: inherit;
+  font-size: 11px;
+  transition: border-color 160ms ease, color 160ms ease;
+}
+
+.copy-email:hover {
+  border-color: var(--cyan);
+  color: var(--cyan);
+}
+
+.contact-copy > .copy-email-status {
+  margin: 8px 0 0;
+  color: var(--cyan);
+  font-size: 11px;
+}
+
+.copy-email-status:empty {
+  display: none;
 }
 
 .social-links {
